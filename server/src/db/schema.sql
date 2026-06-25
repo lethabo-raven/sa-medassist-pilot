@@ -1,4 +1,12 @@
-CREATE EXTENSION IF NOT EXISTS vector;
+DO $$
+BEGIN
+  IF current_setting('app.enable_pgvector', true) = 'true' THEN
+    CREATE EXTENSION IF NOT EXISTS vector;
+  END IF;
+EXCEPTION
+  WHEN undefined_file THEN
+    RAISE NOTICE 'pgvector extension is not available; continuing with PostgreSQL full-text search fallback.';
+END $$;
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE IF NOT EXISTS pharmacies (
@@ -157,7 +165,8 @@ CREATE TABLE IF NOT EXISTS document_chunks (
   chunk_index integer NOT NULL,
   content text NOT NULL,
   citation_label text NOT NULL,
-  embedding vector(768),
+  embedding jsonb,
+  search_text tsvector GENERATED ALWAYS AS (to_tsvector('english', chunk_text)) STORED,
   created_at timestamptz NOT NULL DEFAULT now(),
   UNIQUE (document_id, chunk_index)
 );
