@@ -1,0 +1,48 @@
+# SA MedAssist standalone Caddy site.
+# Copy or import this file without replacing the existing TransitIQ Caddyfile.
+#
+# Validation:
+#   sudo caddy validate --config /etc/caddy/Caddyfile
+#   sudo systemctl reload caddy
+#
+# Required placeholders to replace:
+#   medassist.domain.com
+#   domain.com
+
+medassist.domain.com {
+  root * /var/www/sa-medassist
+  encode gzip zstd
+
+  handle /api/* {
+    reverse_proxy 127.0.0.1:4100
+  }
+
+  handle /widget.js {
+    reverse_proxy 127.0.0.1:4100
+  }
+
+  handle {
+    try_files {path} /index.html
+    file_server
+  }
+}
+
+domain.com {
+  encode gzip zstd
+
+  handle /medassist/api/* {
+    uri strip_prefix /medassist
+    reverse_proxy 127.0.0.1:4100
+  }
+
+  handle /medassist/widget.js {
+    uri strip_prefix /medassist
+    reverse_proxy 127.0.0.1:4100
+  }
+
+  handle_path /medassist/* {
+    root * /var/www/sa-medassist
+    try_files {path} /index.html
+    file_server
+  }
+}

@@ -1,0 +1,233 @@
+.knowledge-management {
+  min-height: 100vh;
+  padding: 18px;
+  background: #f7fafb;
+  color: #263746;
+}
+
+.km-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.km-header p {
+  margin: 0 0 5px;
+  color: #08796f;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.km-header h1 {
+  margin: 0;
+  color: #10233f;
+}
+
+.km-header span {
+  color: #66788a;
+}
+
+.km-header button,
+.km-card button {
+  min-height: 42px;
+  border: 1px solid #0f9f8f;
+  border-radius: 12px;
+  background: #0f9f8f;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.km-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.km-card {
+  border: 1px solid #dbe5ea;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(16, 35, 63, 0.08);
+}
+
+.km-card h2 {
+  margin: 0;
+  color: #10233f;
+}
+
+.km-upload {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.km-upload label {
+  display: grid;
+  gap: 6px;
+  font-weight: 850;
+}
+
+.km-upload input,
+.km-upload select {
+  min-height: 44px;
+  border: 1px solid #cbd7de;
+  border-radius: 12px;
+  padding: 9px 12px;
+  font: inherit;
+}
+
+.km-repository,
+.km-review {
+  overflow: hidden;
+}
+
+.km-repository h2,
+.km-review header {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf2f5;
+}
+
+.km-review header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.km-review p {
+  margin: 6px 0 0;
+  color: #66788a;
+}
+
+.km-table {
+  overflow-x: auto;
+}
+
+.km-table table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.km-table th,
+.km-table td {
+  padding: 12px;
+  border-bottom: 1px solid #edf2f5;
+  text-align: left;
+}
+
+.km-table th {
+  color: #66788a;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.km-table tr {
+  cursor: pointer;
+}
+
+.km-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #e8eef3;
+  color: #405366;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.status-approved,
+.status-active {
+  background: #e5f7ed;
+  color: #17613a;
+}
+
+.status-pending,
+.status-pending-review,
+.status-processing,
+.status-uploaded {
+  background: #fff6df;
+  color: #735000;
+}
+
+.status-rejected,
+.status-expired {
+  background: #fff0f0;
+  color: #8a1f1f;
+}
+
+.km-extractions {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.km-extractions article {
+  display: grid;
+  gap: 8px;
+  border: 1px solid #dbe5ea;
+  border-radius: 14px;
+  padding: 12px;
+  background: #fbfdfe;
+}
+
+.km-extractions p {
+  margin: 0;
+}
+
+.km-extractions span {
+  color: #66788a;
+}
+
+.km-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.km-actions button {
+  padding: 0 12px;
+}
+
+.km-alert {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 850;
+}
+
+.km-error {
+  background: #fff0f0;
+  color: #8a1f1f;
+}
+
+.km-success {
+  background: #effaf5;
+  color: #17613a;
+}
+
+@media (min-width: 920px) {
+  .knowledge-management {
+    padding: 28px;
+  }
+
+  .km-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .km-grid {
+    grid-template-columns: minmax(300px, 380px) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .km-review header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

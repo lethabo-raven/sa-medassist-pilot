@@ -1,0 +1,354 @@
+:root {
+  --manager-bg: #f7fafb;
+  --manager-surface: #ffffff;
+  --manager-navy: #10233f;
+  --manager-text: #263746;
+  --manager-muted: #66788a;
+  --manager-line: #dbe5ea;
+  --manager-teal: #0f9f8f;
+  --manager-green: #2eb872;
+  --manager-amber: #d98b17;
+  --manager-red: #c53a3a;
+  --manager-shadow: 0 12px 32px rgba(16, 35, 63, 0.08);
+}
+
+.manager-portal {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(15, 159, 143, 0.08), transparent 34rem),
+    var(--manager-bg);
+  color: var(--manager-text);
+}
+
+.manager-portal * {
+  box-sizing: border-box;
+}
+
+.manager-sidebar {
+  display: none;
+}
+
+.manager-main {
+  padding: 18px;
+}
+
+.manager-header {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.manager-header h1 {
+  margin: 0;
+  color: var(--manager-navy);
+  font-size: 1.75rem;
+  line-height: 1.15;
+}
+
+.manager-header p:last-child {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: var(--manager-muted);
+}
+
+.manager-eyebrow {
+  margin: 0 0 5px;
+  color: #08796f;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.manager-header button,
+.employee-form button,
+.manager-row-actions button {
+  min-height: 42px;
+  border: 1px solid var(--manager-line);
+  border-radius: 12px;
+  background: var(--manager-surface);
+  color: var(--manager-navy);
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.manager-header button,
+.employee-form button:not(.secondary),
+.manager-row-actions button:first-child {
+  border-color: var(--manager-teal);
+  background: var(--manager-teal);
+  color: #ffffff;
+}
+
+.manager-alert {
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+.alert-error {
+  border: 1px solid rgba(197, 58, 58, 0.28);
+  background: #fff2f2;
+  color: #8f2020;
+}
+
+.alert-success {
+  border: 1px solid rgba(46, 184, 114, 0.28);
+  background: #effaf5;
+  color: #17613a;
+}
+
+.manager-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.manager-metric,
+.employee-form,
+.employee-table,
+.history-panel {
+  border: 1px solid rgba(219, 229, 234, 0.9);
+  border-radius: 16px;
+  background: var(--manager-surface);
+  box-shadow: var(--manager-shadow);
+}
+
+.manager-metric {
+  padding: 15px;
+}
+
+.manager-metric span {
+  display: block;
+  color: var(--manager-muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.manager-metric strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--manager-navy);
+  font-size: 1.55rem;
+}
+
+.metric-warning {
+  border-color: rgba(217, 139, 23, 0.32);
+  background: #fffaf0;
+}
+
+.manager-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.employee-form {
+  display: grid;
+  gap: 13px;
+  padding: 18px;
+}
+
+.employee-form h2,
+.employee-table h2,
+.history-panel h2 {
+  margin: 0;
+  color: var(--manager-navy);
+  font-size: 1.12rem;
+}
+
+.employee-form label {
+  display: grid;
+  gap: 7px;
+  color: #34495a;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.employee-form input,
+.employee-form select {
+  min-height: 44px;
+  border: 1px solid #cbd7de;
+  border-radius: 12px;
+  padding: 9px 12px;
+  background: #fbfdfe;
+  color: var(--manager-text);
+  font: inherit;
+}
+
+.employee-form input:focus,
+.employee-form select:focus {
+  outline: 3px solid rgba(15, 159, 143, 0.16);
+  border-color: var(--manager-teal);
+}
+
+.manager-actions,
+.manager-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.manager-actions button,
+.manager-row-actions button {
+  padding: 0 12px;
+}
+
+.employee-table {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.table-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--manager-line);
+}
+
+.table-title span {
+  color: var(--manager-muted);
+  font-weight: 800;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.employee-table table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.employee-table th,
+.employee-table td {
+  padding: 12px;
+  border-bottom: 1px solid #edf2f5;
+  text-align: left;
+  vertical-align: top;
+}
+
+.employee-table th {
+  color: var(--manager-muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.manager-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #e8eef3;
+  color: #405366;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.status-active {
+  background: #e5f7ed;
+  color: #17613a;
+}
+
+.status-disabled,
+.status-suspended {
+  background: #fff0f0;
+  color: #8a1f1f;
+}
+
+.history-panel {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.history-list article {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--manager-line);
+  border-radius: 14px;
+  background: #fbfdfe;
+}
+
+.history-list span {
+  color: var(--manager-muted);
+}
+
+@media (min-width: 860px) {
+  .manager-portal {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+
+  .manager-sidebar {
+    display: block;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 24px 18px;
+    background: var(--manager-navy);
+    color: #ffffff;
+  }
+
+  .manager-brand {
+    display: grid;
+    gap: 4px;
+    margin-bottom: 28px;
+  }
+
+  .manager-brand span {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.84rem;
+  }
+
+  .manager-sidebar nav {
+    display: grid;
+    gap: 8px;
+  }
+
+  .manager-sidebar a {
+    min-height: 42px;
+    border-radius: 12px;
+    padding: 11px 12px;
+    color: rgba(255, 255, 255, 0.84);
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .manager-sidebar a:hover {
+    background: rgba(15, 159, 143, 0.22);
+    color: #ffffff;
+  }
+
+  .manager-main {
+    padding: 28px;
+  }
+
+  .manager-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .manager-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .manager-grid {
+    grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+    align-items: start;
+  }
+}

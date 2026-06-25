@@ -1,0 +1,253 @@
+:root {
+  --health-bg: #f7fafb;
+  --health-surface: #ffffff;
+  --health-surface-soft: #edf8f6;
+  --health-navy: #10233f;
+  --health-text: #263746;
+  --health-muted: #66788a;
+  --health-line: #dbe5ea;
+  --health-teal: #0f9f8f;
+  --health-teal-dark: #08796f;
+  --health-green: #2eb872;
+  --health-amber: #d98b17;
+  --health-red: #c53a3a;
+  --health-radius: 16px;
+  --health-shadow: 0 12px 32px rgba(16, 35, 63, 0.08);
+}
+
+body {
+  background: var(--health-bg);
+  color: var(--health-text);
+}
+
+.app-shell,
+.dashboard-shell,
+.admin-shell,
+.manager-shell,
+.knowledge-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(15, 159, 143, 0.08), transparent 34rem),
+    var(--health-bg);
+}
+
+.modern-sidebar,
+.app-sidebar {
+  background: var(--health-navy);
+  color: #ffffff;
+}
+
+.modern-topbar,
+.app-topbar {
+  border-bottom: 1px solid var(--health-line);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.dashboard-card,
+.metric-card,
+.admin-card,
+.document-card,
+.audit-card,
+.knowledge-card,
+.staff-card,
+.landing-card {
+  border: 1px solid rgba(219, 229, 234, 0.9);
+  border-radius: var(--health-radius);
+  background: var(--health-surface);
+  box-shadow: var(--health-shadow);
+}
+
+.dashboard-card h1,
+.dashboard-card h2,
+.admin-card h1,
+.admin-card h2,
+.landing-page h1,
+.landing-page h2,
+.pilot-metrics h1,
+.pilot-metrics h2,
+.audit-panel h1,
+.audit-panel h2,
+.knowledge-management h1,
+.knowledge-management h2 {
+  color: var(--health-navy);
+}
+
+.status-badge,
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.status-approved,
+.status-active,
+.status-verified-source,
+.badge-approved,
+.badge-active,
+.badge-verified-source {
+  background: #e5f7ed;
+  color: #17613a;
+}
+
+.status-pending,
+.status-needs-review,
+.badge-pending,
+.badge-needs-review {
+  background: #fff6df;
+  color: #735000;
+}
+
+.status-rejected,
+.status-expired,
+.badge-rejected,
+.badge-expired {
+  background: #fff0f0;
+  color: #8a1f1f;
+}
+
+.safety-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 11px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.safety-emergency,
+.safety-contraindicated,
+.safety-severe-allergy,
+.badge-emergency {
+  background: #fff0f0;
+  color: var(--health-red);
+}
+
+.safety-pharmacist-review-required,
+.safety-interaction-warning,
+.safety-allergy-warning,
+.badge-pharmacist-review-required,
+.badge-interaction-warning,
+.badge-allergy-warning {
+  background: #fff6df;
+  color: var(--health-amber);
+}
+
+.safety-verified-source,
+.safety-no-issue-detected,
+.badge-verified-source {
+  background: #e5f7ed;
+  color: #17613a;
+}
+
+.floating-chatbot,
+.chat-widget,
+.modern-chat-widget {
+  border: 1px solid rgba(219, 229, 234, 0.92);
+  border-radius: 22px;
+  background: var(--health-surface);
+  box-shadow: 0 22px 60px rgba(16, 35, 63, 0.18);
+}
+
+.chat-header {
+  background: var(--health-navy);
+  color: #ffffff;
+}
+
+.chat-message,
+.chat-bubble,
+.message-bubble {
+  border-radius: 18px;
+  padding: 11px 13px;
+  line-height: 1.45;
+}
+
+.chat-message.user,
+.message-bubble.user {
+  background: var(--health-teal);
+  color: #ffffff;
+}
+
+.chat-message.assistant,
+.message-bubble.assistant {
+  background: #eef3f6;
+  color: var(--health-text);
+}
+
+.chat-input,
+.chat-input-area {
+  border-top: 1px solid var(--health-line);
+  background: #fbfdfe;
+}
+
+.citation-card,
+.source-citation,
+.source-card {
+  border: 1px solid var(--health-line);
+  border-radius: 14px;
+  background: #fbfdfe;
+  padding: 12px;
+}
+
+.safety-warning,
+.clinical-warning,
+.escalation-banner {
+  border-left: 4px solid var(--health-amber);
+  border-radius: 14px;
+  background: #fff8ea;
+  padding: 12px 14px;
+  color: #654400;
+  font-weight: 850;
+}
+
+.escalation-banner.emergency,
+.safety-warning.emergency {
+  border-left-color: var(--health-red);
+  background: #fff0f0;
+  color: #8a1f1f;
+}
+
+button.primary,
+.primary-button,
+.btn-primary {
+  border: 1px solid var(--health-teal);
+  border-radius: 12px;
+  background: var(--health-teal);
+  color: #ffffff;
+  font-weight: 850;
+}
+
+input,
+select,
+textarea {
+  border-color: #cbd7de;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(15, 159, 143, 0.16);
+  border-color: var(--health-teal);
+}
+
+@media (max-width: 720px) {
+  .dashboard-grid,
+  .metrics-grid,
+  .admin-grid,
+  .knowledge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-chatbot,
+  .chat-widget {
+    right: 12px;
+    bottom: 12px;
+    max-width: calc(100vw - 24px);
+  }
+}

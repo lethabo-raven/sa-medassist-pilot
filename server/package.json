@@ -1,0 +1,39 @@
+{
+  "name": "@sa-medassist/server",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "db:migrate": "node src/db/migrate.js",
+    "db:seed": "node src/db/seed.js",
+    "db:maintenance": "node src/db/maintenance.js",
+    "test:retrieval-quality": "node src/tests/retrievalQuality.test.js",
+    "test:clinical-safety": "node src/tests/clinicalSafety.test.js",
+    "test:assistant-role-safety": "node src/tests/assistantRoleSafety.test.js",
+    "test:medicine-risk-icd10": "node src/tests/medicineRiskIcd10.test.js",
+    "test:patient-context": "node src/tests/patientContext.test.js",
+    "test:allergy-interaction": "node src/tests/allergyInteraction.test.js",
+    "test:source-backed-rules": "node src/tests/sourceBackedRules.test.js",
+    "test:pharmacy-auth": "node src/tests/pharmacyAuth.test.js",
+    "test:pharmacy-manager": "node src/tests/pharmacyManager.test.js",
+    "seed:demo-users": "node src/db/seeds/demoUsers.js",
+    "ingest:trusted-sources": "node src/commands/ingestTrustedSources.js",
+    "ingest:trusted-source": "node src/commands/ingestTrustedSources.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "mammoth": "^1.8.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.13.1",
+    "pdf-parse": "^1.1.1",
+    "xlsx": "^0.18.5",
+    "uuid": "^11.0.3",
+    "zod": "^3.24.1"
+  }
+}

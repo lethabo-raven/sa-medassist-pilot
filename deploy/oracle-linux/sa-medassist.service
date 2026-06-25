@@ -1,0 +1,17 @@
+[Unit]
+Description=SA MedAssist API
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/sa-medassist-pilot
+EnvironmentFile=/etc/sa-medassist/sa-medassist.env
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=5
+User=sa-medassist
+Group=sa-medassist
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
